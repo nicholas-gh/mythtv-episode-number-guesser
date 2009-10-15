@@ -27,14 +27,23 @@ This is just an experiment, so is pretty messy.
 
 It renames the titles for anything you have recordeded, to include 'Sx
 Ey' at the end of the existing title. This isn't ideal, but I don't
-find a better place to keep it yet...
+find a better place to keep it yet... (In fact, we rename the whole
+title to be the same as the thetvdb.com title.)
 
 (I then use mythrename.pl --link ... , and I taught XBMC now to parse
 the season/episode data out of the filenames.)
+
+WARNING: If you let this guess based on only descriptions with no
+other clues, it's likely to rename all your programmes totally
+wrong. Even with what seems like better information (such as an
+episode number in the data already) we sometimes don't manage very
+well at all - I've even found programmes which were broadcast with one
+title, but the show retroactively changed the title :-/ So I'm not
+sure if this approach will ever work out...
 """
 
 only_recgroups = ("Collecting",) # I only put episodes that are likely to have good thetvdb data in this recgroup
-avoid_channels = (1097,)
+avoid_channels = (1234,)
 avoid_categories = ("Movie",)
 avoid_titles = tuple()
 avoid_length = datetime.timedelta(hours=1.5)
